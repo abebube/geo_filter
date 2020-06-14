@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <br><br>
+      <div class="row">
+        <div class="col-6">
+          <img src="assets/logo.png" height="80">
+        </div>
+        <div class="col-6 text-right">
+          <br>
+          <h4>Nearby Customers</h4>
+        </div>
+      </div>
+      
+      <hr>
+
+      <table class="table table-striped">
+        <tr>
+          <th>#</th>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ ((rowsPerPage * page) - rowsPerPage) + (i+1) }}</td>
+          <td>{{user?.user_id}}</td>
+          <td>{{user?.name}}</td>
+          <td><button class="btn btn-success btn-sm">Invite</button></td>
+        </tr>
+      </table>
+      
+      <div class="text-right container">
+        <div class="row">
+            <div class="col-6 text-left">
+                <span>
+                        Showing {{ ((rowsPerPage * page) - rowsPerPage) + 1 }}-{{ ((page * rowsPerPage)-rowsPerPage) + users.length }} of {{ allUsers.length }}
+                </span>                        
+            </div>
+            <div class="col-2">
+            </div>
+            <div class="col-4">
+                <button [disabled]="page < 2" class="btn btn-fill" (click)="previousPage();">Previous {{ rowsPerPage }}</button>
+                <span style="padding-left: 5px;"></span>
+                <button [disabled]="(page == Math.ceil(totalRecords / rowsPerPage)) || users.length == 0" (click)="nextPage();" class="btn btn-fill">Next {{ rowsPerPage }}</button>
+            </div>  
+        </div> 
+      </div>
+      <br><br>
+    </div>
+    <div class="col-1"></div>
+  </div>  
+</div>
