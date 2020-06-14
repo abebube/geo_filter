@@ -8,12 +8,25 @@
           <img src="assets/logo.png" height="80">
         </div>
         <div class="col-6 text-right">
-          <br>
-          <h4>Nearby Customers</h4>
+          <br><br>
+          <h5>Nearby Customers</h5>
         </div>
       </div>
       
       <hr>
+      <div class="row">
+        <div style="padding: 5px;" class="col-4 text-right">
+          
+        </div>
+        <div class="col-8 text-right">
+          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('plain')">Export as Plain Text</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json')">Export in JSON Text</button>
+          <br><br>
+        </div>
+        
+      </div>
+      
 
       <table class="table table-striped">
         <tr>
@@ -26,7 +39,7 @@
           <td>{{ ((rowsPerPage * page) - rowsPerPage) + (i+1) }}</td>
           <td>{{user?.user_id}}</td>
           <td>{{user?.name}}</td>
-          <td><button class="btn btn-success btn-sm">Invite</button></td>
+          <td><button class="btn btn-dark btn-sm">Invite</button></td>
         </tr>
       </table>
       

@@ -4,6 +4,7 @@ import { CustomerService } from '../../services/customer.service';
 import { HttpClient } from '@angular/common/http';
 import { UtilitiesService } from '../../utilities/utilities.service';
 import { List } from 'linqts';
+import { FileHelperService } from '../../utilities/file-helper.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -21,9 +22,10 @@ export class CustomerListComponent implements OnInit {
   Math:any;
 
   constructor(
-    private _http: HttpClient,
-    private _utilitiesService: UtilitiesService,
-    private _customerService:CustomerService
+    private _http:HttpClient,
+    private _utilitiesService:UtilitiesService,
+    private _customerService:CustomerService,
+    private _fileHelperService:FileHelperService
   ) {
     this.Math = Math;
    }
@@ -65,4 +67,8 @@ export class CustomerListComponent implements OnInit {
     this.loadUsers();
   }
 
+  export(format:string){
+    let output:string = this._utilitiesService.convertUsersToText(format, this.allUsers);
+    this._fileHelperService.download('output.txt', output);
+  }
 }

@@ -7,6 +7,7 @@ import { CustomerListComponent } from './pages/customer-list/customer-list.compo
 import { UtilitiesService } from './utilities/utilities.service';
 import { FormsModule } from '@angular/forms';
 import { GeoHelpersService } from './utilities/geo-helpers.service';
+import { FileHelperService } from './utilities/file-helper.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GeoHelpersService } from './utilities/geo-helpers.service';
   ],
   providers: [
     UtilitiesService,
-    GeoHelpersService
+    GeoHelpersService,
+    FileHelperService
   ],
   bootstrap: [AppComponent]
 })

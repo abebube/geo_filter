@@ -39,5 +39,30 @@ export class UtilitiesService {
     return users;
   }
 
+  convertUsersToText(format:string, users:User[]):string{
+    let output:string = '';
+
+    //validate
+    if(users == null || users == undefined || users.length == 0)
+      return '';
+
+    if(format == null || format == ''){
+      return '';
+    }
+
+    if(format.toLocaleLowerCase() == 'json'){
+      for(let user of users){
+        output += JSON.stringify(user) + '\n';
+      }
+    }
+    if(format.toLocaleLowerCase() == 'plain'){
+      for(let user of users){
+        output += user.user_id.toString() + '. ' + user.name + '\n';
+      }
+    }
+    
+    return output;
+  }
+
   
 }
