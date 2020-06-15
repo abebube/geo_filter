@@ -13,5 +13,5 @@ Step 3: On successful node_modules installation, run the command 'ng serve' to s
 Step 1: Navigate to /geo-filter-app/dist/ folder
 Step 2: Run index.html in a browser. That's all!
 
-# To Test (Using Karma and JAsmine)
+# To Test (Using Karma and Jasmine)
 Step 1: cd into the geo-filter-app folder and run the command 'ng test'. This will open a new browser window with a running instance of Karma showing successful tests. Test files have the extension .spec.ts.
