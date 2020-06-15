@@ -35,7 +35,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   getCustomers(){
-    //this._http.get('assets/customers.txt', {responseType: 'text'})
     this._customerService.getCustomers()
     .subscribe(data =>{
       let users = this._utilitiesService.formatCustomerData(data);

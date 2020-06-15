@@ -16,11 +16,11 @@
       <hr>
       <div class="row">
         <div class="col-12 text-right">
-          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('plain')">Export as Plain Text</button>
+          <button class="btn btn-dark" (click)="export('plain')">Export as Plain Text</button>
           &nbsp;&nbsp;
-          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json')">Export as JSON Objects</button>
+          <button class="btn btn-dark" (click)="export('json')">Export as JSON Objects</button>
           &nbsp;&nbsp;
-          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json_list')">Export as JSON List</button>
+          <button class="btn btn-dark" (click)="export('json_list')">Export as JSON List</button>
         </div>
         <div class="col-12 text-right">
           <i style="color: grey; font-size: 0.8em;">All downloads will be in (.txt)</i>

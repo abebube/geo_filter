@@ -12,8 +12,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerService {
 
-  //baseUrl:string = environment.url;
-
   constructor(private _http:HttpClient) { }
 
   public getCustomers():Observable<any> {
