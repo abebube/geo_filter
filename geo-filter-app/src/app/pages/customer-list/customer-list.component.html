@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
+    <div class="col-lg-2 col-md-2 col-sm-12"></div>
+    <div class="col-lg-8 col-md-8 col-sm-12">
       <br><br>
       <div class="row">
         <div class="col-6">
@@ -15,19 +15,19 @@
       
       <hr>
       <div class="row">
-        <div style="padding: 5px;" class="col-4 text-right">
-          
-        </div>
-        <div class="col-8 text-right">
+        <div class="col-12 text-right">
           <button class="btn btn-dark" [disabled]="format == ''" (click)="export('plain')">Export as Plain Text</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json')">Export in JSON Text</button>
-          <br><br>
+          &nbsp;&nbsp;
+          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json')">Export as JSON Objects</button>
+          &nbsp;&nbsp;
+          <button class="btn btn-dark" [disabled]="format == ''" (click)="export('json_list')">Export as JSON List</button>
         </div>
-        
+        <div class="col-12 text-right">
+          <i style="color: grey; font-size: 0.8em;">All downloads will be in (.txt)</i>
+          <br>
+        </div>
       </div>
       
-
       <table class="table table-striped">
         <tr>
           <th>#</th>
@@ -61,6 +61,6 @@
       </div>
       <br><br>
     </div>
-    <div class="col-1"></div>
+    <div class="col-lg-2 col-md-2 col-sm-12"></div>
   </div>  
 </div>
